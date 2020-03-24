@@ -1,9 +1,9 @@
-# SKILL TREE
----
+# SKILL TREE 
+===
 Skill tree allows you to visualize the list of skills to be acquired for each module of the Application Designer Developer referential.
 For users registering the Skill tree serves to visualize his level for each skill and to compare with other users of the same promotion.
 ---
-#TODO
+## TODO
 Design the database:
 * [ ] create the MCD 
 * [ ] create the MPD
