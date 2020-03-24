@@ -52,6 +52,6 @@ For users registering the Skill tree serves to visualize his level for each skil
 - NAME
 
 #### USERS_SKILLS_LEVELS
-- USERS_ID
-- SKILLS_ID
-- LEVELS_ID
+- USER_ID
+- SKILL_ID
+- LEVEL_ID
