@@ -1,0 +1,8 @@
+:
+SKILLS: skill_id, title, description
+DF, 0N MODULES, _11 SKILLS
+MODULES: module_id, title
+
+LEVELS: level_id, name
+HAVE, 1N USERS, 1N SKILLS, 1N LEVELS
+USERS: id, firstName, lastName, email, password
