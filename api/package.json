@@ -1,0 +1,28 @@
+{
+  "name": "skill-tree",
+  "version": "1.0.0",
+  "description": "Skill tree allows you to visualize the list of skills to be acquired for each module of the Application Designer Developer referential. For users registering the Skill tree serves to visualize his level for each skill and to compare with other users of the same promotion.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slade850/skill-tree.git"
+  },
+  "author": "Julien Bardin and Clemence Depernet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slade850/skill-tree/issues"
+  },
+  "homepage": "https://github.com/slade850/skill-tree#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0"
+  }
+}
