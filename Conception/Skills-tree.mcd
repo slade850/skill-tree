@@ -6,3 +6,6 @@ MODULES: module_id, title
 LEVELS: level_id, name
 HAVE, 1N USERS, 1N SKILLS, 1N LEVELS
 USERS: id, firstName, lastName, email, password
+
+HAVE2, 1N USERS, 1N PROMOTIONS
+PROMOTIONS: id, name, year
