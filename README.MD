@@ -26,8 +26,8 @@ For users registering the Skill tree serves to visualize his level for each skil
 * [x] create user component
 * [x] creat query with user id
 * [x] create the authentication in user component
-* [ ] create query for take all users by promotion
-* [ ] create query for take all users by promotion and level
+* [x] create query for take all users by promotion
+* [x] create query for take all users by promotion and level
 
 #### Develop the front end:
 * [ ] create the homepage
