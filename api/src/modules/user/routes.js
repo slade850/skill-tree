@@ -8,6 +8,10 @@ router.post('/authenticate', UserController.authenticate);
 router.post('/register', UserController.register);
 router.get('/info', connectJwt.allUser, UserController.userCall);
 router.get('/skillslevels', connectJwt.allUser, UserController.getUserSkillsLevel)
-router.get('/group', connectJwt.allUser, UserController.allUsersInPromotion)
+router.get('/byskill/:skill_id', connectJwt.allUser, UserController.getUserBySkill)
+router.get('/bylevel/:level_id', connectJwt.allUser, UserController.getUserByLevel)
+router.get('/group', connectJwt.allUser, UserController.getAllUsersInPromotion)
+router.get('/groupbyskill/:skill_id', connectJwt.allUser, UserController.getUsersGroupBySkill)
+router.get('/groupbylevel/:level_id', connectJwt.allUser, UserController.getUsersGroupByLevel)
 
 module.exports = router;

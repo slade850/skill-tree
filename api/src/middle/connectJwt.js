@@ -23,44 +23,52 @@ const connectJwt = {
     adminOnly: async (req, res, next) => {
         jwtAuthenticate(req, 'admin')
         .then(authorize => {
+            console.log(authorize)
             if(authorize.authorize){
                 res.locals.user = authorize.user;
                 next();
+            } else {
+                res.status(403).send(authorize.message);
             } 
-            res.status(403).send(authorize.message);
             })
         .catch(err => res.status(403).send(err.message))
         },
     teacherOnly: async (req, res, next) => {
         jwtAuthenticate(req, 'teacher')
         .then(authorize => {
+            console.log(authorize)
             if(authorize.authorize){
                 res.locals.user = authorize.user;
                 next();
+            } else {
+                res.status(403).send(authorize.message);
             } 
-            res.status(403).send(authorize.message);
             })
         .catch(err => res.status(403).send(err.message))
         }, 
     studentOnly: async (req, res, next) => {
         jwtAuthenticate(req, 'student')
         .then(authorize => {
+            console.log(authorize)
             if(authorize.authorize){
                 res.locals.user = authorize.user;
                 next();
+            } else {
+                res.status(403).send(authorize.message);
             } 
-            res.status(403).send(authorize.message);
             })
         .catch(err => res.status(403).send(err.message))
         },       
     allUser: async (req, res, next) => {
         jwtAuthenticate(req, null)
         .then(authorize => {
+            console.log(authorize)
             if(authorize.authorize){
                 res.locals.user = authorize.user;
                 next();
+            } else {
+                res.status(403).send(authorize.message);
             } 
-            res.status(403).send(authorize.message);
             })
         .catch(err => res.status(403).send(err.message))
     }

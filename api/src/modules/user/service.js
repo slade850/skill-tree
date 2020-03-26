@@ -47,6 +47,42 @@ const UserServices = {
         })
         .catch(err => { return err})
     },
+    userLevelsBySkill: async (id, skill_id) => {
+        return UserQueries.userLevelsBySkill(id, skill_id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    },
+    userSkillsByLevel: async (id, level_id) => {
+        return UserQueries.userSkillsByLevel(id, level_id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    },
+    getAllUsersInPromotion: async (promo_id) => {
+        return UserQueries.getAllUserByPromotion(promo_id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    },
+    getUsersLevelsBySkills: async (promo_id, skill_id) => {
+        return UserQueries.getUsersLevelsBySkills(promo_id, skill_id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    },
+    getUsersSkillsByLevels: async (promo_id, level_id) => {
+        return UserQueries.getUsersSkillsByLevels(promo_id, level_id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    }
+
 }
 
 module.exports = UserServices;

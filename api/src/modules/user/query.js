@@ -57,6 +57,32 @@ const Query = {
             })
         })    
     },
+    userLevelsBySkill: (id, skill_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT skill_id, level_id
+            FROM user_skills_levels
+            WHERE user_id = "${id}"
+            AND skill_id = ${skill_id}`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })    
+    },
+    userSkillsByLevel: (id, level_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT skill_id, level_id
+            FROM user_skills_levels
+            WHERE user_id = "${id}"
+            AND level_id = ${level_id}`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })    
+    },
     getAllUserByPromotion: (promo_id) => {
         return new Promise((resolve, reject) => {
             let sqlQuery = `SELECT users.id, users.firstName, users.lastName, users.avatar, users.role
@@ -76,7 +102,8 @@ const Query = {
             FROM users, users_promotions, user_skills_levels
             WHERE users.id = users_promotions.user_id
             AND users_promotions.promotion_id = ${promo_id}
-            AND users_skills_levels.skill_id = ${skill_id}`;
+            AND user_skills_levels.skill_id = ${skill_id}
+            AND users.id = user_skills_levels.user_id`;
 
             db.query(sqlQuery, (err, res) => {
                 if (err) reject(err)
@@ -90,10 +117,12 @@ const Query = {
             FROM users, users_promotions, user_skills_levels
             WHERE users.id = users_promotions.user_id
             AND users_promotions.promotion_id = ${promo_id}
-            AND users_skills_levels.level_id = ${level_id}`;
+            AND user_skills_levels.level_id = ${level_id}
+            AND users.id = user_skills_levels.user_id`;
 
             db.query(sqlQuery, (err, res) => {
                 if (err) reject(err)
+                console.log(res)
                 resolve(res);
             })
         })    

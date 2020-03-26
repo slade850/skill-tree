@@ -22,17 +22,44 @@ const UserController = {
         UserServices.getUserSkillsLevel(res.locals.user.id)
             .then(result => {
                 console.log(result)
-                res.status(result.status).send(result)
+                res.status(200).send(result)
             })
+            .catch(err => res.status(400).send(err))
     },
-    allUsersInPromotion: (req, res) => {
-        
+    getUserBySkill: (req, res) => {
+        UserServices.userLevelsBySkill(res.locals.user.id, parseInt(req.params.skill_id))
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
     },
-    UsersGroupBySkill: (req, res) => {
-
+    getUserByLevel: (req, res) => {
+        UserServices.userSkillsByLevel(res.locals.user.id, parseInt(req.params.level_id))
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
     },
-    UsersGroupByLevel: (req, res) => {
-
+    getAllUsersInPromotion: (req, res) => {
+        UserServices.getAllUsersInPromotion(res.locals.user.promotion_id)
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
+    },
+    getUsersGroupBySkill: (req, res) => {
+        UserServices.getUsersLevelsBySkills(res.locals.user.promotion_id, parseInt(req.params.skill_id))
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
+    },
+    getUsersGroupByLevel: (req, res) => {
+        UserServices.getUsersSkillsByLevels(res.locals.user.promotion_id, parseInt(req.params.level_id))
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
     }
 }
 
