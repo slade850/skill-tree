@@ -40,9 +40,13 @@ const UserServices = {
         return { status: 200, payload: { success: true, user: user }
     }
     },
-    UserCall: async ()=> {
-        return { status: 200, payload: { success: true, message: "wellcome"}}
-    }
+    getUserSkillsLevel: async (id) => {
+        return UserQueries.getUserSkillsLevel(id)
+        .then(res => {
+            return res
+        })
+        .catch(err => { return err})
+    },
 }
 
 module.exports = UserServices;

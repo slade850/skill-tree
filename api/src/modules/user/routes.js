@@ -6,6 +6,8 @@ const UserController = require('./controller')
 
 router.post('/authenticate', UserController.authenticate);
 router.post('/register', UserController.register);
-router.get('/user', connectJwt.allUser, UserController.userCall)
+router.get('/info', connectJwt.allUser, UserController.userCall);
+router.get('/skillslevels', connectJwt.allUser, UserController.getUserSkillsLevel)
+router.get('/group', connectJwt.allUser, UserController.allUsersInPromotion)
 
 module.exports = router;

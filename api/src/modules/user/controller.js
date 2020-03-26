@@ -16,8 +16,23 @@ const UserController = {
             .then(result => res.status(result.status).send(result.payload))
     },
     userCall: (req, res) => {
-        UserServices.UserCall()
-            .then(result => res.status(result.status).send(result.payload))
+        res.status(200).send(res.locals.user)
+    },
+    getUserSkillsLevel: (req, res) => {
+        UserServices.getUserSkillsLevel(res.locals.user.id)
+            .then(result => {
+                console.log(result)
+                res.status(result.status).send(result)
+            })
+    },
+    allUsersInPromotion: (req, res) => {
+        
+    },
+    UsersGroupBySkill: (req, res) => {
+
+    },
+    UsersGroupByLevel: (req, res) => {
+
     }
 }
 

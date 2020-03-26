@@ -16,22 +16,85 @@ const Query = {
         return new Promise((resolve, reject) => {
             let sqlQuery = `INSERT INTO users (id, firstName, lastName, email, password) VALUES ("${user.id}", "${user.firstName}", "${user.lastName}", "${user.email}", "${user.hashedPassword}");`
             let sqlQuery2 = `INSERT INTO users_promotions (user_id, promotion_id) VALUES ((SELECT id FROM users WHERE id='${user.id}'), (SELECT id FROM promotions WHERE id=${user.promotion_id}));`
+            let sqlQuery3 = `INSERT INTO user_skills_levels (user_id, skill_id)
+            SELECT "${user.id}", skills.id
+            FROM skills`
             db.query(sqlQuery, (err, res) => {
                 if (err) reject (err)
                 db.query(sqlQuery2, (err, res) => {
                     if (err) reject (err)
-                    resolve(res);
+                    db.query(sqlQuery3, (err, res) => {
+                        if (err) reject (err)
+                        resolve(res);
+                    })
                 })
             })
         })    
     },
     getUserById: (id) => {
         return new Promise((resolve, reject) => {
-            let sqlQuery = `SELECT * FROM users WHERE id = "${id}"`;
+            let sqlQuery = `SELECT users.id, users.firstName, users.lastName, users.email, users.avatar, users.role, promotions.id AS promotion_id, promotions.name AS promotion_name
+            FROM users, promotions, users_promotions 
+            WHERE users.id = "${id}"
+            AND users_promotions.user_id = users.id
+            AND promotions.id = users_promotions.promotion_id`;
 
             db.query(sqlQuery, (err, res) => {
                 if (err) reject(err)
                 resolve(res[0]);
+            })
+        })    
+    },
+    getUserSkillsLevel: (id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT skill_id, level_id
+            FROM user_skills_levels
+            WHERE user_id = "${id}"`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })    
+    },
+    getAllUserByPromotion: (promo_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT users.id, users.firstName, users.lastName, users.avatar, users.role
+            FROM users, users_promotions
+            WHERE users.id = users_promotions.user_id
+            AND users_promotions.promotion_id = ${promo_id}`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })    
+    },
+    getUsersLevelsBySkills: (promo_id, skill_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT users.id, users.firstName, users.lastName, users.avatar, users.role, user_skills_levels.level_id
+            FROM users, users_promotions, user_skills_levels
+            WHERE users.id = users_promotions.user_id
+            AND users_promotions.promotion_id = ${promo_id}
+            AND users_skills_levels.skill_id = ${skill_id}`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })    
+    },
+    getUsersSkillsByLevels: (promo_id, level_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT users.id, users.firstName, users.lastName, users.avatar, users.role, user_skills_levels.skill_id
+            FROM users, users_promotions, user_skills_levels
+            WHERE users.id = users_promotions.user_id
+            AND users_promotions.promotion_id = ${promo_id}
+            AND users_skills_levels.level_id = ${level_id}`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
             })
         })    
     }
