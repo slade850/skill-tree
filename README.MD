@@ -1,5 +1,5 @@
 # SKILL TREE 
-
+### you can test the API at <http://julien-bardin.tech:8000/api/>
 
 :clipboard: Description
 
@@ -75,7 +75,7 @@ For users registering the Skill tree serves to visualize his level for each skil
   
 # API route descriptions
 
-#### users route
+#### users route [see here Postman's screens](./postman_view/user_request/)
 
 - ##### /api/user/register
     to register a new user you must fill in the following fields:
