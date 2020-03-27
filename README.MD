@@ -72,3 +72,47 @@ For users registering the Skill tree serves to visualize his level for each skil
 #### USERS_PROMOTIONS
 - USER_ID
 - PROMOTION_ID
+  
+# API route descriptions
+
+#### users route
+
+- ##### /api/user/register
+    to register a new user you must fill in the following fields:
+        {  
+            "firstName": "string",
+           "lastName": "string",
+           "email": "email",
+           "password": "password",
+           "promotion_id": number (id of user promotion)
+        }
+     
+- ##### /api/user/authenticate
+    to authenticate user you must fill in the following fields:
+        {
+           "email": "email",
+           "password": "password"
+        }
+    after validating the authentication you receive a token with a header cookie, you don't need to manage the token
+
+- ##### /api/user/info (you must be authenticated.)
+    return an object with the information of the authenticate user
+
+- ##### api/user/skillslevels (you must be authenticated.)
+    return all skills id and levels id for the authenticate user
+
+- ##### /api/user/byskill/:skill_id (you must be authenticated.)
+    return the level id corresponding to the requested skill the authenticate user
+
+- ##### /api/user/bylevel/:level_id (you must be authenticated.)
+    return all skills with the requested level the authenticate user
+
+
+- ##### /api/user/group (you must be authenticated.)
+    return all users in the same promotion of the authenticate user
+
+- ##### /api/user/groupbylevel/:level_id (you must be authenticated.)
+    return all users and their skills with the requested level
+
+- ##### /api/user/groupbyskill/:skill_id (you must be authenticated.)
+    return all users and their level with the requested skill
