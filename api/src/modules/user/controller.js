@@ -1,4 +1,5 @@
 const UserServices = require('./service');
+const UserQueries = require('./query');
 
 const UserController = {
     authenticate: (req, res) => {
@@ -14,6 +15,11 @@ const UserController = {
     register: (req, res) => {
         UserServices.register(req)
             .then(result => res.status(result.status).send(result.payload))
+    },
+    allPromotions: (req, res) => {
+        UserQueries.getPromotions()
+        .then(result => res.status(200).send(result))
+        .catch(err => res.status(400).send(err))
     },
     userCall: (req, res) => {
         res.status(200).send(res.locals.user)

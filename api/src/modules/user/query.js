@@ -14,22 +14,38 @@ const Query = {
     },
     register: (user) => {
         return new Promise((resolve, reject) => {
-            let sqlQuery = `INSERT INTO users (id, firstName, lastName, email, password) VALUES ("${user.id}", "${user.firstName}", "${user.lastName}", "${user.email}", "${user.hashedPassword}");`
+            let sqlQuery = `SELECT id FROM promotions WHERE id=${user.promotion_id};`
+            let sqlQuery1 = `INSERT INTO users (id, firstName, lastName, email, password) VALUES ("${user.id}", "${user.firstName}", "${user.lastName}", "${user.email}", "${user.hashedPassword}");`
             let sqlQuery2 = `INSERT INTO users_promotions (user_id, promotion_id) VALUES ((SELECT id FROM users WHERE id='${user.id}'), (SELECT id FROM promotions WHERE id=${user.promotion_id}));`
             let sqlQuery3 = `INSERT INTO user_skills_levels (user_id, skill_id)
             SELECT "${user.id}", skills.id
             FROM skills`
             db.query(sqlQuery, (err, res) => {
                 if (err) reject (err)
-                db.query(sqlQuery2, (err, res) => {
-                    if (err) reject (err)
-                    db.query(sqlQuery3, (err, res) => {
-                        if (err) reject (err)
-                        resolve(res);
+                if(res.length > 0){
+                    db.query(sqlQuery1, (err, res) => {
+                        if (err) reject (err.sqlMessage)
+                        db.query(sqlQuery2, (err, res) => {
+                            if (err) reject (err.sqlMessage)
+                            db.query(sqlQuery3, (err, res) => {
+                                if (err) reject (err.sqlMessage)
+                                resolve(res);
+                            })    
+                        })
                     })
-                })
+                } else {
+                    reject ("promotion_id don't exist")
+                }
             })
         })    
+    },
+    getPromotions: () => {
+        return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM promotions`, (err, res) => {
+                if (err) reject(err)
+                resolve(res);
+            })
+        })  
     },
     getUserById: (id) => {
         return new Promise((resolve, reject) => {

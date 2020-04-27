@@ -4,6 +4,7 @@ const router = express.Router();
 
 const UserController = require('./controller')
 
+router.get('/promotions', UserController.allPromotions)
 router.post('/authenticate', UserController.authenticate);
 router.post('/register', UserController.register);
 router.get('/info', connectJwt.allUser, UserController.userCall);

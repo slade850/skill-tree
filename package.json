@@ -1,0 +1,25 @@
+{
+  "name": "react-skill-tree",
+  "version": "1.0.0",
+  "description": "react front for skill-tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slade850/skill-tree.git"
+  },
+  "author": "Julien Bardin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slade850/skill-tree/issues"
+  },
+  "homepage": "https://github.com/slade850/skill-tree#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

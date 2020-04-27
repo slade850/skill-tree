@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/html'));
 
 app.get('/api/', (req, res) => {
     res.send('wellcome to skill-tree API')
