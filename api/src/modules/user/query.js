@@ -14,7 +14,7 @@ const Query = {
     },
     register: (user) => {
         return new Promise((resolve, reject) => {
-            let sqlQuery = `SELECT id FROM promotions WHERE id=${user.promotion_id};`
+            let sqlQuery = `SELECT id FROM promotions WHERE id=${parseInt(user.promotion_id)};`
             let sqlQuery1 = `INSERT INTO users (id, firstName, lastName, email, password) VALUES ("${user.id}", "${user.firstName}", "${user.lastName}", "${user.email}", "${user.hashedPassword}");`
             let sqlQuery2 = `INSERT INTO users_promotions (user_id, promotion_id) VALUES ((SELECT id FROM users WHERE id='${user.id}'), (SELECT id FROM promotions WHERE id=${user.promotion_id}));`
             let sqlQuery3 = `INSERT INTO user_skills_levels (user_id, skill_id)

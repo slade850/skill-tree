@@ -7,7 +7,10 @@ const userRoutes = require('./modules/user/routes');
 const port = process.env.SERVER_PORT;
 require('./config/database');
 
-app.use(cors());
+app.use(cors({
+    origin: true,
+    credentials: true,
+  }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
