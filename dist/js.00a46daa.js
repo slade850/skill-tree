@@ -34065,30 +34065,28 @@ var Home = function Home(props) {
         });
       });
     });
+  }, []);
+  (0, _react.useEffect)(function () {
+    _api.default.get('user/skillslevels').then(function (res) {
+      setUserNotes(res.data);
+    }).catch(function (err) {
+      (0, _localStorage.clearUser)();
+      props.setUser(null);
+      setUserNotes({});
+    });
 
-    if (props.user) {
-      _api.default.get('user/skillslevels').then(function (res) {
-        console.log(res);
-        console.log(userNotes);
-        setUserNotes(res.data);
-      }).catch(function (err) {
-        (0, _localStorage.clearUser)();
-        props.setUser(null);
-        setUserNotes({});
-      });
-
-      _api.default.get('user/groupAverageLevel').then(function (res) {
-        setPromotionNote(res.data);
-      }).catch(function (err) {
-        (0, _localStorage.clearUser)();
-        props.setUser(null);
-        setPromotionNote({});
-      });
-    }
+    _api.default.get('user/groupAverageLevel').then(function (res) {
+      console.log(res.data);
+      setPromotionNote(res.data);
+    }).catch(function (err) {
+      (0, _localStorage.clearUser)();
+      props.setUser(null);
+      setPromotionNote({});
+    });
 
     console.log(userNotes);
     console.log(promotionNote);
-  }, []);
+  }, [_localStorage.getStorageUser]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, modules.map(function (module) {

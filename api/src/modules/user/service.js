@@ -42,7 +42,10 @@ const UserServices = {
     getUserSkillsLevel: async (id) => {
         return UserQueries.getUserSkillsLevel(id)
         .then(res => {
-            let result = res.map(level => {return {[level.skill_id]: level.level_id}})
+            let result = new Object();
+            res.forEach(level => {
+                result[level.skill_id] = level.level_id
+            });
             return result
         })
         .catch(err => { return err})

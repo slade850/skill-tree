@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import api from '../utils/api';
-import { clearUser } from '../utils/local-storage';
+import { clearUser, getStorageUser } from '../utils/local-storage';
 
 const Home = (props) => {
     const [modules, setModules] = useState([]);
@@ -15,34 +15,33 @@ const Home = (props) => {
                 .then(skills => setModules(prev =>[...prev, skills.data]))
             })
         })
+    }, [])
 
-        if(props.user){
+    useEffect(() => {
             api.get('user/skillslevels')
             .then(res => {
-                console.log(res)
-                console.log(userNotes)
                 setUserNotes(res.data)
             })
             .catch(err => {
-                clearUser();
-                props.setUser(null);
-                setUserNotes({});
+                clearUser()
+                props.setUser(null)
+                setUserNotes({})
             });
 
             api.get('user/groupAverageLevel')
             .then(res => {
-                setPromotionNote(res.data)
+                console.log(res.data);
+                setPromotionNote(res.data);
             })
             .catch(err => {
-                clearUser();
-                props.setUser(null);
-                setPromotionNote({});
-            });
-    }
+                clearUser()
+                props.setUser(null)
+                setPromotionNote({})
+            })
 
-    console.log(userNotes);
-    console.log(promotionNote);
-    }, [])
+            console.log(userNotes)
+            console.log(promotionNote)
+    }, [getStorageUser])
 
 
     return (
