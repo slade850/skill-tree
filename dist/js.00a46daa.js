@@ -34068,6 +34068,7 @@ var Home = function Home(props) {
 
     if (props.user) {
       _api.default.get('user/skillslevels').then(function (res) {
+        console.log(res);
         console.log(userNotes);
         setUserNotes(res.data);
       }).catch(function (err) {
@@ -34431,25 +34432,7 @@ var Register = function Register(props) {
 
 var _default = Register;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../utils/api":"js/utils/api.js"}],"js/pages/test.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Test = function Test(props) {
-  return /*#__PURE__*/_react.default.createElement("h1", null, "Test");
-};
-
-var _default = Test;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"js/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../utils/api":"js/utils/api.js"}],"js/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34468,8 +34451,6 @@ var _login = _interopRequireDefault(require("./pages/login"));
 var _headers = _interopRequireDefault(require("./components/headers"));
 
 var _register = _interopRequireDefault(require("./pages/register"));
-
-var _test = _interopRequireDefault(require("./pages/test"));
 
 var _localStorage = require("./utils/local-storage");
 
@@ -34511,9 +34492,6 @@ var App = function App() {
     user: user,
     setUser: setUser
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    exact: true,
-    path: "/test"
-  }, /*#__PURE__*/_react.default.createElement(_test.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/login"
   }, /*#__PURE__*/_react.default.createElement(_login.default, {
     setUser: setUser
@@ -34524,7 +34502,7 @@ var App = function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./pages/home":"js/pages/home.js","./pages/login":"js/pages/login.js","./components/headers":"js/components/headers.js","./pages/register":"js/pages/register.js","./pages/test":"js/pages/test.js","./utils/local-storage":"js/utils/local-storage.js"}],"js/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./pages/home":"js/pages/home.js","./pages/login":"js/pages/login.js","./components/headers":"js/components/headers.js","./pages/register":"js/pages/register.js","./utils/local-storage":"js/utils/local-storage.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34566,7 +34544,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32827" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38215" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

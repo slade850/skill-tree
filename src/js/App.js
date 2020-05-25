@@ -9,7 +9,6 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Header from './components/headers';
 import Register from './pages/register';
-import Test from './pages/test';
 import { getStorageUser } from './utils/local-storage';
 
 const App = () => {
@@ -28,9 +27,6 @@ const App = () => {
                 <Switch>
                     <Route exact path="/">
                         <Home user={user} setUser={setUser} />
-                    </Route>
-                    <Route exact path="/test">
-                        <Test />
                     </Route>
                     <Route path="/login">
                         <Login setUser={setUser} />

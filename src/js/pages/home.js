@@ -19,6 +19,7 @@ const Home = (props) => {
         if(props.user){
             api.get('user/skillslevels')
             .then(res => {
+                console.log(res)
                 console.log(userNotes)
                 setUserNotes(res.data)
             })
