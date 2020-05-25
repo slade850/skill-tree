@@ -42,7 +42,8 @@ const UserServices = {
     getUserSkillsLevel: async (id) => {
         return UserQueries.getUserSkillsLevel(id)
         .then(res => {
-            return res
+            let result = res.map(level => {return {[level.skill_id]: level.level_id}})
+            return result
         })
         .catch(err => { return err})
     },
@@ -80,6 +81,14 @@ const UserServices = {
             return res
         })
         .catch(err => { return err})
+    },
+    getUsersGroupAverageLevel: async (promo_id) => {
+        const skills_id = await UserQueries.getAllSkill().then(res => res)
+        let result = new Object();
+        for(let i = 0; i < skills_id.length; i++){
+            await UserQueries.getUsersGroupAverageLevel(promo_id, skills_id[i].id).then(res => result[res.skill] = res.notes).catch(err => err)
+        }
+        return result;
     }
 
 }

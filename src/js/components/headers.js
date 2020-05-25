@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { clearUser } from '../utils/local-storage';
 const Header = (props) => {
     console.log('header props: ', props)
     return (
@@ -16,7 +17,7 @@ const Header = (props) => {
                             (
                                 <li>
                                     <span>{props.user.firstName}</span>
-                                    <button>Logout</button>
+                                    <button onClick={() => { clearUser(); props.setUser(null)}}>Logout</button>
                                 </li>
                             ) :
                             (

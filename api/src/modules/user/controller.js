@@ -68,6 +68,13 @@ const UserController = {
             res.status(200).send(result)
         })
         .catch(err => res.status(400).send(err))
+    },
+    getUsersGroupAverageLevel: (req, res) => {
+        UserServices.getUsersGroupAverageLevel(res.locals.user.promotion_id)
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(400).send(err))
     }
 }
 

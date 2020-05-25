@@ -63,6 +63,7 @@ const Register = (props) => {
         <div className="">
             <label>Promotion</label>
             <select name='promotion_id' onChange={(ev)=> setPromotion(ev.target.value)}>
+                <option value='0'>Veuillez selectionner Votre Promo</option>
                 { promos.map((promo, i) => <option value={promo.id} key={i + 'option'}>{promo.name}</option>) }
             </select>
         </div>

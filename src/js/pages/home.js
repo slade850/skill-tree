@@ -1,33 +1,74 @@
-import React, {useState} from 'react';
-import api from '../utils/api'
+import React, {useState, useEffect} from 'react';
+import api from '../utils/api';
+import { clearUser } from '../utils/local-storage';
 
 const Home = (props) => {
-    const [padawans, setPadawane] = useState(['Alexandre','Thibault', 'Clémence', 'Elena', 'Jega', 'Julien', 'Lilian', 'Rim', 'Shelley']);
-    const [reloading, setReloading] = useState('');
+    const [modules, setModules] = useState([]);
+    const [userNotes, setUserNotes] = useState({});
+    const [promotionNote, setPromotionNote] = useState({});
 
-    api.get('user/skillslevels')
-        .then(response => console.log(response))
+    useEffect(() => {
+        api.get('module')
+        .then(res => {
+            res.data.map(mod => {
+                api.get(`module/${mod.id}/skills`)
+                .then(skills => setModules(prev =>[...prev, skills.data]))
+            })
+        })
 
-    const randomize = () => {
-        let randomizeTab = padawans.sort(() => 0.5 - Math.random());
-        setPadawane(randomizeTab);
-        console.log(padawans);
-        setReloading(padawans[Math.round(Math.random()*padawans.length)]);
+        if(props.user){
+            api.get('user/skillslevels')
+            .then(res => {
+                console.log(userNotes)
+                setUserNotes(res.data)
+            })
+            .catch(err => {
+                clearUser();
+                props.setUser(null);
+                setUserNotes({});
+            });
+
+            api.get('user/groupAverageLevel')
+            .then(res => {
+                setPromotionNote(res.data)
+            })
+            .catch(err => {
+                clearUser();
+                props.setUser(null);
+                setPromotionNote({});
+            });
     }
 
+    console.log(userNotes);
+    console.log(promotionNote);
+    }, [])
+
+
     return (
-        <div className={reloading}>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Padawans</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { padawans.map(pad => <tr key={pad}><td>{pad}</td></tr>) }
-                </tbody>
-            </table>
-            <button type="button" onClick={() => {randomize()}}>randomise</button>
+        <div className="">
+            {
+                modules.map(module => {
+                return(<div key={module.module.id} className="">
+                    <div>
+                        <h2>Module{module.module.id}</h2>
+                        {module.module.title}
+                    </div>
+                        { module.skills.map(skill => {
+                                return (<div key={skill.id}>
+                                    <div>{skill.title}</div>
+                                    <div>
+                                        {
+                                            userNotes[skill.id] != undefined ? 
+                                            <div>Votre note: {userNotes[skill.id]} <br />
+                                            Note moyen de la Promo: {promotionNote[skill.id]}
+                                            </div>
+                                            : ''
+                                        }
+                                    </div>
+                                    </div>)
+                        })}
+                </div>)})
+            }
         </div>
     )
 }

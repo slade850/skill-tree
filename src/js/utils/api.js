@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-
+axios.defaults.withCredentials = true;
 const instance = axios.create({
-    baseURL: 'http://localhost:3000/api/',
-    withCredentials: true
+    baseURL: 'http://localhost:3000/api/'
 })
 
 /* export const addAuth = token => {
