@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import api from '../utils/api'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, Redirect, useHistory } from 'react-router-dom'
 
 const Home = () => {
 
+    let history = useHistory();
     const dispatch = useDispatch()
     const moduleIsloading = useSelector(state => state.tree.modules.isLoading)
     const modules = useSelector(state => state.tree.modules.collection)
@@ -53,7 +54,7 @@ const Home = () => {
                 return (<div key={'module' + module.module.id}>
                     <h2>{module.module.title}</h2>
                     <ul>
-                {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); window.location.href="/skillDetails" }}> <span>{skill.title}</span> { userIslogged && <div>Your Level: {userNotes[skill.id]};   Average Level: {promotionNotes[skill.id]}</div> }</li> )})}
+                {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); history.push("/skillDetails") }}> <span>{skill.title}</span> { userIslogged && <div>Your Level: {userNotes[skill.id]};   Average Level: {promotionNotes[skill.id]}</div> }</li> )})}
                     </ul>
                 </div>)
                 })
