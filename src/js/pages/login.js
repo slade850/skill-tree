@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
-import { setStorageUser } from '../utils/local-storage'
 import api from '../utils/api';
 
-const Login = (props) => {
+import { useSelector, useDispatch } from 'react-redux'
+
+const Login = () => {
+
+    const dispatch = useDispatch();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [formSubmitted, setFromSubmitted] = useState(false);
     const [message, setMessage] = useState(null);
     const [formStatus, setFromStatus] = useState('Welcome')
 
@@ -19,28 +22,17 @@ const Login = (props) => {
             email,
             password
         }
-        console.log(body)
         api.post('user/authenticate', body)
         .then(response => {
-            setStorageUser(response.data.user)
-            props.setUser(response.data.user)
+            dispatch({type: 'SET_USER', payload: response.data.user})
             setMessage(response.data.message)
             setFromStatus('Welcome')
         })
         .catch(err => {
-            console.log(err.response)
             setMessage(err.response.data.message);
             setFromStatus('Try again');
         })
         .finally(() => setIsLoading(false) )
-
-/*         setTimeout(() =>{
-            setFromStatus('form receive')
-            let response = Math.round(Math.random());
-            response == 1 ? setMessage('User successfully connected') : setMessage('username or password missmatch')
-            setTimeout(() => {setFromStatus('Welcome')}, 1200);
-            setIsLoading(false);
-        }, 2000) */
     }
 
     return (

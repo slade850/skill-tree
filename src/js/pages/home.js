@@ -1,76 +1,66 @@
-import React, {useState, useEffect} from 'react';
-import api from '../utils/api';
-import { clearUser, getStorageUser } from '../utils/local-storage';
+import React, { useEffect } from 'react'
+import api from '../utils/api'
 
-const Home = (props) => {
-    const [modules, setModules] = useState([]);
-    const [userNotes, setUserNotes] = useState({});
-    const [promotionNote, setPromotionNote] = useState({});
+import { useSelector, useDispatch } from 'react-redux'
+import { NavLink, Redirect } from 'react-router-dom'
+
+const Home = () => {
+
+    const dispatch = useDispatch()
+    const moduleIsloading = useSelector(state => state.tree.modules.isLoading)
+    const modules = useSelector(state => state.tree.modules.collection)
+
+    const userIslogged = useSelector(state => state.auth.user.isLogged)
+    const user = useSelector(state => state.auth.user.detail)
+    const userNotes = useSelector(state => state.auth.user.notes)
+    const promotionNotes = useSelector(state => state.auth.user.promotionNotes)
 
     useEffect(() => {
-        api.get('module')
+        dispatch({type: 'FETCH_MODULES'})
+        api.get('module/modulesWithSkills')
         .then(res => {
-            res.data.map(mod => {
-                api.get(`module/${mod.id}/skills`)
-                .then(skills => setModules(prev =>[...prev, skills.data]))
-            })
+            dispatch({type: 'SET_MODULES', payload: res.data})
         })
     }, [])
 
+
     useEffect(() => {
-            api.get('user/skillslevels')
-            .then(res => {
-                setUserNotes(res.data)
-            })
-            .catch(err => {
-                clearUser()
-                props.setUser(null)
-                setUserNotes({})
-            });
+        api.get('user/skillslevels')
+        .then(res => {
+            dispatch({type: "SET_USER_NOTES", payload: res.data})
+        })
+        .catch(err => {
+            dispatch({type: "CLEAR_USER"})
+        });
 
-            api.get('user/groupAverageLevel')
-            .then(res => {
-                console.log(res.data);
-                setPromotionNote(res.data);
-            })
-            .catch(err => {
-                clearUser()
-                props.setUser(null)
-                setPromotionNote({})
-            })
+        api.get('user/groupAverageLevel')
+        .then(res => {
+            dispatch({type: "SET_USER_PROMOTION_NOTES", payload: res.data})
+        })
+        .catch(err => {
+            dispatch({type: "CLEAR_USER"})
+        })
 
-            console.log(userNotes)
-            console.log(promotionNote)
-    }, [getStorageUser])
+}, [userIslogged]);
 
 
     return (
-        <div className="">
+        <section>
+            <h1>Home</h1>
+            {moduleIsloading && <span>loading ...</span>}
             {
-                modules.map(module => {
-                return(<div key={module.module.id} className="">
-                    <div>
-                        <h2>Module{module.module.id}</h2>
-                        {module.module.title}
-                    </div>
-                        { module.skills.map(skill => {
-                                return (<div key={skill.id}>
-                                    <div>{skill.title}</div>
-                                    <div>
-                                        {
-                                            userNotes[skill.id] != undefined ? 
-                                            <div>Votre note: {userNotes[skill.id]} <br />
-                                            Note moyen de la Promo: {promotionNote[skill.id]}
-                                            </div>
-                                            : ''
-                                        }
-                                    </div>
-                                    </div>)
-                        })}
-                </div>)})
+                modules && modules.map(module => {
+                return (<div key={'module' + module.module.id}>
+                    <h2>{module.module.title}</h2>
+                    <ul>
+                {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); window.location.href="/skillDetails" }}> <span>{skill.title}</span> { userIslogged && <div>Your Level: {userNotes[skill.id]};   Average Level: {promotionNotes[skill.id]}</div> }</li> )})}
+                    </ul>
+                </div>)
+                })
             }
-        </div>
-    )
+            <button onClick={() => dispatch({type: 'CLEAR_MODULES'})}>Clear Module</button>
+        </section>
+            )
 }
 
 export default Home;

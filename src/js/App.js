@@ -1,35 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux'
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
 
+import Header from './component/header';
 import Home from './pages/home';
 import Login from './pages/login';
-import Header from './components/headers';
 import Register from './pages/register';
-import { getStorageUser } from './utils/local-storage';
+import SkillDetails from './pages/skillDetail';
+
 
 const App = () => {
 
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        let storageUser = getStorageUser()
-        if (storageUser) setUser(storageUser);
-    }, [])
-
     return (
         <Router>
-            <Header user={user} setUser={setUser} />
+            <Header />
             <div>
                 <Switch>
                     <Route exact path="/">
-                        <Home user={user} setUser={setUser} />
+                        <Home />
+                    </Route>
+                    <Route path="/skillDetails">
+                        <SkillDetails />
                     </Route>
                     <Route path="/login">
-                        <Login setUser={setUser} />
+                        <Login />
                     </Route>
                     <Route path="/register">
                         <Register />
