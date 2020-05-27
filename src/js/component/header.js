@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,6 +8,7 @@ const Header = () => {
     const dispatch = useDispatch()
     const userIslogged = useSelector(state => state.auth.user.isLogged)
     const user = useSelector(state => state.auth.user.detail)
+
 
     return (
         <header>
@@ -30,9 +31,10 @@ const Header = () => {
                                 </li>
                             )
                     }
+                    { !userIslogged &&
                     <li>
                         <Link to="/register">Register</Link>
-                    </li>
+                    </li>}
                 </ul>
             </nav>
         </header>

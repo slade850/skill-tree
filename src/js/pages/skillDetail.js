@@ -8,6 +8,7 @@ const SkillDetail = () => {
     const dispatch = useDispatch()
     const currentModule = useSelector(state => state.tree.currentSkill.module)
     const currentSkill = useSelector(state => state.tree.currentSkill.details)
+    /* const allSkills = useSelector(state => state.tree.skills) */
 
     const userIslogged = useSelector(state => state.auth.user.isLogged)
     const user = useSelector(state => state.auth.user.detail)
@@ -17,25 +18,6 @@ const SkillDetail = () => {
     console.log(currentModule)
 
 
-    useEffect(() => {
-        api.get('user/skillslevels')
-        .then(res => {
-            dispatch({type: "SET_USER_NOTES", payload: res.data})
-        })
-        .catch(err => {
-            dispatch({type: "CLEAR_USER"})
-        });
-
-        api.get('user/groupAverageLevel')
-        .then(res => {
-            dispatch({type: "SET_USER_PROMOTION_NOTES", payload: res.data})
-        })
-        .catch(err => {
-            dispatch({type: "CLEAR_USER"})
-        })
-
-}, [userIslogged]);
-
 
     return (
         <section>
@@ -43,6 +25,7 @@ const SkillDetail = () => {
             <h2>{currentSkill.title}</h2>
             <p>{currentSkill.description}</p>
             { userIslogged && <div><p>Your Level: {userNotes[currentSkill.id]}</p>  <p>Average Level: {promotionNotes[currentSkill.id]}</p></div> }
+            <button>prev</button><button>next</button>
         </section>
             )
 }

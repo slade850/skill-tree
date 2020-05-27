@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import api from '../utils/api'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Redirect, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Home = () => {
 
@@ -22,44 +22,30 @@ const Home = () => {
         .then(res => {
             dispatch({type: 'SET_MODULES', payload: res.data})
         })
+
+       /*  api.get('module/getAllSkills')
+        .then(res => dispatch({type: 'SET_ALL_SKILLS', payload: res.data})) */
     }, [])
 
 
-    useEffect(() => {
-        api.get('user/skillslevels')
-        .then(res => {
-            dispatch({type: "SET_USER_NOTES", payload: res.data})
-        })
-        .catch(err => {
-            dispatch({type: "CLEAR_USER"})
-        });
-
-        api.get('user/groupAverageLevel')
-        .then(res => {
-            dispatch({type: "SET_USER_PROMOTION_NOTES", payload: res.data})
-        })
-        .catch(err => {
-            dispatch({type: "CLEAR_USER"})
-        })
-
-}, [userIslogged]);
 
 
     return (
-        <section>
-            <h1>Home</h1>
+        <section className="rows flexEvenly">
+            <h1 className="cols-12 centerText">Home</h1>
             {moduleIsloading && <span>loading ...</span>}
             {
                 modules && modules.map(module => {
-                return (<div key={'module' + module.module.id}>
-                    <h2>{module.module.title}</h2>
+                return (<div className="cols-10 csm-3 card" key={'module' + module.module.id}>
+                    <h2 className="cardTitle">{module.module.title}</h2>
+                    <div className="cardBody">
                     <ul>
                 {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); history.push("/skillDetails") }}> <span>{skill.title}</span> { userIslogged && <div>Your Level: {userNotes[skill.id]};   Average Level: {promotionNotes[skill.id]}</div> }</li> )})}
                     </ul>
+                    </div>
                 </div>)
                 })
             }
-            <button onClick={() => dispatch({type: 'CLEAR_MODULES'})}>Clear Module</button>
         </section>
             )
 }

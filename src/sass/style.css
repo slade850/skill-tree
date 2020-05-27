@@ -1,0 +1,912 @@
+.cols-1 {
+  width: 8.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-1 img {
+  width: 100%;
+}
+
+.cols-2 {
+  width: 16.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-2 img {
+  width: 100%;
+}
+
+.cols-3 {
+  width: 25%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-3 img {
+  width: 100%;
+}
+
+.cols-4 {
+  width: 33.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-4 img {
+  width: 100%;
+}
+
+.cols-5 {
+  width: 41.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-5 img {
+  width: 100%;
+}
+
+.cols-6 {
+  width: 50%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-6 img {
+  width: 100%;
+}
+
+.cols-7 {
+  width: 58.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-7 img {
+  width: 100%;
+}
+
+.cols-8 {
+  width: 66.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-8 img {
+  width: 100%;
+}
+
+.cols-9 {
+  width: 75%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-9 img {
+  width: 100%;
+}
+
+.cols-10 {
+  width: 83.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-10 img {
+  width: 100%;
+}
+
+.cols-11 {
+  width: 91.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-11 img {
+  width: 100%;
+}
+
+.cols-12 {
+  width: 100%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-12 img {
+  width: 100%;
+}
+
+.splitrow-1 {
+  width: 8.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-2 {
+  width: 16.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-3 {
+  width: 25%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-4 {
+  width: 33.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-5 {
+  width: 41.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-6 {
+  width: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-7 {
+  width: 58.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-8 {
+  width: 66.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-9 {
+  width: 75%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-10 {
+  width: 83.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-11 {
+  width: 91.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-12 {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.flexCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flexAround {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flexBetween {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flexEvenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flexEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flexStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flexVaCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexVaEnd {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.flexVaStart {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.selfStart {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.selfEnd {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.rows {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 640px) {
+  .csm-1 {
+    width: 8.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-1 img {
+    width: 100%;
+  }
+  .csm-2 {
+    width: 16.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-2 img {
+    width: 100%;
+  }
+  .csm-3 {
+    width: 25%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-3 img {
+    width: 100%;
+  }
+  .csm-4 {
+    width: 33.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-4 img {
+    width: 100%;
+  }
+  .csm-5 {
+    width: 41.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-5 img {
+    width: 100%;
+  }
+  .csm-6 {
+    width: 50%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-6 img {
+    width: 100%;
+  }
+  .csm-7 {
+    width: 58.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-7 img {
+    width: 100%;
+  }
+  .csm-8 {
+    width: 66.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-8 img {
+    width: 100%;
+  }
+  .csm-9 {
+    width: 75%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-9 img {
+    width: 100%;
+  }
+  .csm-10 {
+    width: 83.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-10 img {
+    width: 100%;
+  }
+  .csm-11 {
+    width: 91.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-11 img {
+    width: 100%;
+  }
+  .csm-12 {
+    width: 100%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-12 img {
+    width: 100%;
+  }
+  .splitrowM-1 {
+    width: 8.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-2 {
+    width: 16.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-3 {
+    width: 25%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-4 {
+    width: 33.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-5 {
+    width: 41.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-6 {
+    width: 50%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-7 {
+    width: 58.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-8 {
+    width: 66.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-9 {
+    width: 75%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-10 {
+    width: 83.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-11 {
+    width: 91.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-12 {
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .flexCenterM {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .flexAroundM {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .flexBetweenM {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .flexEvenlyM {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .flexEndM {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .flexStartM {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .flexVaCenterM {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .flexVaEndM {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .flexVaStartM {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .selfStartM {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .selfEndM {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .csl-1 {
+    width: 8.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-1 img {
+    width: 100%;
+  }
+  .csl-2 {
+    width: 16.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-2 img {
+    width: 100%;
+  }
+  .csl-3 {
+    width: 25%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-3 img {
+    width: 100%;
+  }
+  .csl-4 {
+    width: 33.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-4 img {
+    width: 100%;
+  }
+  .csl-5 {
+    width: 41.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-5 img {
+    width: 100%;
+  }
+  .csl-6 {
+    width: 50%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-6 img {
+    width: 100%;
+  }
+  .csl-7 {
+    width: 58.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-7 img {
+    width: 100%;
+  }
+  .csl-8 {
+    width: 66.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-8 img {
+    width: 100%;
+  }
+  .csl-9 {
+    width: 75%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-9 img {
+    width: 100%;
+  }
+  .csl-10 {
+    width: 83.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-10 img {
+    width: 100%;
+  }
+  .csl-11 {
+    width: 91.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-11 img {
+    width: 100%;
+  }
+  .csl-12 {
+    width: 100%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-12 img {
+    width: 100%;
+  }
+  .splitrowL-1 {
+    width: 8.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-2 {
+    width: 16.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-3 {
+    width: 25%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-4 {
+    width: 33.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-5 {
+    width: 41.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-6 {
+    width: 50%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-7 {
+    width: 58.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-8 {
+    width: 66.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-9 {
+    width: 75%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-10 {
+    width: 83.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-11 {
+    width: 91.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-12 {
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .flexCenterL {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .flexAroundL {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .flexBetweenL {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .flexEvenlyL {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .flexEndL {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .flexStartL {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .flexVaCenterL {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .flexVaEndL {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .flexVaStartL {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .selfStartL {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .selfEndL {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.card {
+  border-radius: 10px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.card .cardTitle {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card .cardBody ul {
+  list-style: none;
+}
+
+.card .cardBody ul li {
+  padding: 5px;
+}
+
+.card .cardBody ul li:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

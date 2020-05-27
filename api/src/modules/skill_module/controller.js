@@ -21,6 +21,11 @@ const SkillModuleController = {
         SkillModuleServices.getModulesWithSkills()
         .then(result => res.status(200).send(result))
         .catch(err => res.status(400).send(err))
+    },
+    getAllSkills: (req, res) => {
+        SkillModuleQueries.getAllSkills()
+        .then(result => res.status(200).send(result))
+        .catch(err => res.status(400).send(err))
     }
 }
 

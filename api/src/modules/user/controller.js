@@ -7,7 +7,7 @@ const UserController = {
             .then(result => {
                 if(result.status == 200){
                     let { password, ...user } = result.payload.user;
-                    res.cookie('token', { access_token: result.payload.token }, { maxAge: 86400000, httpOnly: true })
+                    res.cookie('token', { access_token: result.payload.token }, { maxAge: 86400000, httpOnly: true, sameSite: true })
                 res.status(result.status).send({message: 'you are logged in', user: user,  access_token: result.payload.token })
                 }
                 res.status(result.status).send(result.payload)

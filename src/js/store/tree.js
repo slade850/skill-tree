@@ -7,33 +7,29 @@
 
 import { combineReducers } from 'redux';
 
-const name = (state = null, action) => {
-    switch (action.type) {
-        case "SET_TREE_NAME":
-            return action.payload
-        case "CLEAR_TREE_NAME":
-            return null  
-        default:
-            return state    
-    }
-}
-
 const modulesInitialState = {
     collection: [],
     isLoading: false
 }
 
 const modules = (state = modulesInitialState, action) => {
-    switch (action.type) {
-        case "FETCH_MODULES":
-            return {...state, isLoading: true }
-        case "SET_MODULES":
-            return { ...state, collection: action.payload, isLoading: false }
-        case "CLEAR_MODULES":
-            return modulesInitialState   
-        default:
-            return state    
-    }
+    const moduleAction = {
+        "FETCH_MODULES": {...state, isLoading: true },
+        "SET_MODULES": {...state, collection: action.payload, isLoading: false },
+        "CLEAR_MODULES": modulesInitialState
+    };
+
+    return moduleAction[action.type] || state;
+}
+
+
+
+const skills = (state = {}, action) => {
+    const skillAction = {
+        "SET_ALL_SKILLS": {...state, collection: action.payload, isLoading: false },
+    };
+
+    return skillAction[action.type] || state;
 }
 
 const currentSkillInit = {
@@ -53,9 +49,9 @@ const currentSkill = (state = currentSkillInit, action) => {
 }
 
 const treeReducer = combineReducers({
-    name,
     modules,
     currentSkill,
+    skills
 });
 
 

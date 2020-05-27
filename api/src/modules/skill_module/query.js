@@ -39,6 +39,15 @@ const Query = {
             })
         })    
     },
+    getAllSkills: () => {
+        return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM skills`, (err, res) => {
+                let result = {};
+                if (err) reject(err)
+                resolve(result = res.map(el => { return { [el.id]: el } }));
+            })
+        })  
+    },
 }
 
 module.exports = Query;

@@ -1,39 +1,37 @@
-import React, {useState} from 'react';
-import api from '../utils/api';
-
+import React, {useState, useEffect} from 'react';
+import { doLogin } from '../store/auth'
 import { useSelector, useDispatch } from 'react-redux'
+import { Redirect } from 'react-router-dom';
 
 const Login = () => {
 
     const dispatch = useDispatch();
+    const message = useSelector(state => state.auth.authMessage.message);
+    const logged = useSelector(state => state.auth.user.isLogged);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [message, setMessage] = useState(null);
     const [formStatus, setFromStatus] = useState('Welcome')
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setMessage(null);
         setIsLoading(true);
-        setFromStatus('please wait');
+        dispatch({type: "CLEAR_AUTH_MESSAGE"})
         const body = {
             email,
             password
         }
-        api.post('user/authenticate', body)
-        .then(response => {
-            dispatch({type: 'SET_USER', payload: response.data.user})
-            setMessage(response.data.message)
-            setFromStatus('Welcome')
+        dispatch(doLogin(body))
+        .then(res => {
+            setIsLoading(false)
         })
         .catch(err => {
-            setMessage(err.response.data.message);
-            setFromStatus('Try again');
+            setIsLoading(false)
         })
-        .finally(() => setIsLoading(false) )
     }
+    
+    if(logged) return <Redirect to="/" />
 
     return (
         <div className="">

@@ -1,0 +1,33 @@
+@import 'grid';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.card{
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-align: center;
+
+    .cardTitle{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .cardBody{
+        ul{
+            list-style: none;
+            li{
+                padding: 5px;
+            }
+            li:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
