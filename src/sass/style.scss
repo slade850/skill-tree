@@ -1,9 +1,35 @@
 @import 'grid';
+@import 'bouton';
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body{
+    background-color: rgb(105, 105, 105);
+}
+
+nav{
+    width: 100%;
+    ul{
+        list-style: none;
+        margin-right: 10px;
+        margin-left: auto;
+        display: flex;
+        li{
+            margin: 20px;
+            color: white;
+            a{
+                color: white;
+            }
+        }
+    }
+    border-bottom: 1px solid black;
+}
+
+.pageTitle{
+    color: white;
 }
 
 .centerText{
@@ -11,15 +37,23 @@
 }
 
 .card{
+    margin-top: 20px;
+    padding: 0;
     border-radius: 10px;
     border: 1px solid grey;
     text-align: center;
+    overflow: hidden;
+    transition: 0.3s;
 
     .cardTitle{
+        width: 100%;
+        background-color: rgb(62, 205, 241);
         text-align: center;
         padding-bottom: 20px;
     }
     .cardBody{
+        width: 100%;
+        background-color: rgb(186, 246, 250);
         ul{
             list-style: none;
             li{
@@ -31,3 +65,34 @@
         }
     }
 }
+
+.card:hover{
+    width: 40vw;
+}
+
+.prez{
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        text-align: center;
+        overflow: hidden;
+        transition: 0.3s;
+        padding: 0;
+    
+        .prezTitle{
+            width: 100%;
+            background-color: rgb(62, 205, 241);
+            text-align: center;
+            h1{
+                padding: 20px;
+            }
+            h2{
+                padding: 20px;
+            }
+        }
+        .prezBody{
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(186, 246, 250);
+        }
+    }

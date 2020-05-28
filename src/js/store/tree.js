@@ -4,7 +4,6 @@
     modules: [],
     isLoading: false
 } */
-
 import { combineReducers } from 'redux';
 
 const modulesInitialState = {
@@ -23,10 +22,9 @@ const modules = (state = modulesInitialState, action) => {
 }
 
 
-
 const skills = (state = {}, action) => {
     const skillAction = {
-        "SET_ALL_SKILLS": {...state, collection: action.payload, isLoading: false },
+        "SET_ALL_SKILLS": {...state, skills: action.payload },
     };
 
     return skillAction[action.type] || state;

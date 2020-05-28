@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import api from '../utils/api'
-import { setStorageLogged, getStorageLogged } from '../utils/local-storage'
+import { setStorageLogged } from '../utils/local-storage'
 
 export const doLogin = (body) => {
     // On lance le fetch user - DOING LOGIN

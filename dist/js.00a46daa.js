@@ -33662,8 +33662,7 @@ var skills = function skills() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   var skillAction = {
     "SET_ALL_SKILLS": _objectSpread({}, state, {
-      collection: action.payload,
-      isLoading: false
+      skills: action.payload
     })
   };
   return skillAction[action.type] || state;
@@ -36690,6 +36689,8 @@ var _reactRedux = require("react-redux");
 
 var _reactRouterDom = require("react-router-dom");
 
+var _reactDom = require("react-dom");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -36717,28 +36718,47 @@ var Home = function Home() {
   var promotionNotes = (0, _reactRedux.useSelector)(function (state) {
     return state.auth.user.promotionNotes;
   });
-  (0, _react.useEffect)(function () {
-    dispatch({
-      type: 'FETCH_MODULES'
-    });
 
-    _api.default.get('module/modulesWithSkills').then(function (res) {
-      dispatch({
-        type: 'SET_MODULES',
-        payload: res.data
-      });
-    });
-    /*  api.get('module/getAllSkills')
-     .then(res => dispatch({type: 'SET_ALL_SKILLS', payload: res.data})) */
+  var stars = function stars(num, key) {
+    var result = [];
 
-  }, []);
+    for (var i = 0; i < 3; i++) {
+      if (i < num) {
+        result.push( /*#__PURE__*/_react.default.createElement("svg", {
+          key: "stars" + key + i,
+          height: "16",
+          width: "16"
+        }, /*#__PURE__*/_react.default.createElement("polygon", {
+          points: "8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5",
+          fill: "Yellow",
+          stroke: "DarkKhaki",
+          strokeWidth: ".5"
+        })));
+      } else {
+        result.push( /*#__PURE__*/_react.default.createElement("svg", {
+          key: "stars" + key + i,
+          height: "16",
+          width: "16"
+        }, /*#__PURE__*/_react.default.createElement("polygon", {
+          points: "8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5",
+          fill: "White",
+          stroke: "DarkKhaki",
+          strokeWidth: ".5"
+        })));
+      }
+    }
+
+    console.log(result.data);
+    return /*#__PURE__*/_react.default.createElement("span", null, result);
+  };
+
   return /*#__PURE__*/_react.default.createElement("section", {
-    className: "rows flexEvenly"
+    className: "rows flexEvenly flexVaStart"
   }, /*#__PURE__*/_react.default.createElement("h1", {
-    className: "cols-12 centerText"
+    className: "cols-12 centerText pageTitle"
   }, "Home"), moduleIsloading && /*#__PURE__*/_react.default.createElement("span", null, "loading ..."), modules && modules.map(function (module) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      className: "cols-10 csm-3 card",
+      className: "cols-10 csl-3 card",
       key: 'module' + module.module.id
     }, /*#__PURE__*/_react.default.createElement("h2", {
       className: "cardTitle"
@@ -36757,14 +36777,14 @@ var Home = function Home() {
           });
           history.push("/skillDetails");
         }
-      }, " ", /*#__PURE__*/_react.default.createElement("span", null, skill.title), " ", userIslogged && /*#__PURE__*/_react.default.createElement("div", null, "Your Level: ", userNotes[skill.id], ";   Average Level: ", promotionNotes[skill.id]));
+      }, /*#__PURE__*/_react.default.createElement("span", null, skill.title), " ", userIslogged && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Your Level:", stars(parseInt(userNotes[skill.id]), "me".concat(skill.id))), /*#__PURE__*/_react.default.createElement("p", null, "Average Level: ", stars(parseInt(promotionNotes[skill.id]), "pro".concat(skill.id)))));
     }))));
   }));
 };
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../utils/api":"js/utils/api.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"js/pages/login.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../utils/api":"js/utils/api.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-dom":"../node_modules/react-dom/index.js"}],"js/pages/login.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36820,11 +36840,6 @@ var Login = function Login() {
       isLoading = _useState6[0],
       setIsLoading = _useState6[1];
 
-  var _useState7 = (0, _react.useState)('Welcome'),
-      _useState8 = _slicedToArray(_useState7, 2),
-      formStatus = _useState8[0],
-      setFromStatus = _useState8[1];
-
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
     setIsLoading(true);
@@ -36842,14 +36857,14 @@ var Login = function Login() {
     });
   };
 
-  if (logged) return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+  if (logged && !isLoading) return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
     to: "/"
   });
   return /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, isLoading ? /*#__PURE__*/_react.default.createElement("h2", null, "loading") : /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement("h1", null, formStatus), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Welcome"), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("label", null, "Email"), /*#__PURE__*/_react.default.createElement("input", {
     type: "email",
@@ -37070,13 +37085,11 @@ var SkillDetail = function SkillDetail() {
   var currentSkill = (0, _reactRedux.useSelector)(function (state) {
     return state.tree.currentSkill.details;
   });
-  /* const allSkills = useSelector(state => state.tree.skills) */
-
+  var allSkills = (0, _reactRedux.useSelector)(function (state) {
+    return state.tree.skills.skills;
+  });
   var userIslogged = (0, _reactRedux.useSelector)(function (state) {
     return state.auth.user.isLogged;
-  });
-  var user = (0, _reactRedux.useSelector)(function (state) {
-    return state.auth.user.detail;
   });
   var userNotes = (0, _reactRedux.useSelector)(function (state) {
     return state.auth.user.notes;
@@ -37084,8 +37097,111 @@ var SkillDetail = function SkillDetail() {
   var promotionNotes = (0, _reactRedux.useSelector)(function (state) {
     return state.auth.user.promotionNotes;
   });
-  console.log(currentModule);
-  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("h1", null, currentModule.title), /*#__PURE__*/_react.default.createElement("h2", null, currentSkill.title), /*#__PURE__*/_react.default.createElement("p", null, currentSkill.description), userIslogged && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Your Level: ", userNotes[currentSkill.id]), "  ", /*#__PURE__*/_react.default.createElement("p", null, "Average Level: ", promotionNotes[currentSkill.id])), /*#__PURE__*/_react.default.createElement("button", null, "prev"), /*#__PURE__*/_react.default.createElement("button", null, "next"));
+  var currentSkillId = parseInt(currentSkill.id);
+  var skillLength = 0;
+
+  for (var skill in allSkills) {
+    skillLength++;
+  }
+
+  var prevSkill = function prevSkill() {
+    currentSkillId == 1 ? dispatch({
+      type: 'SET_CURRENT_SKILL',
+      payload: {
+        module: {
+          id: allSkills[skillLength].module_id,
+          title: allSkills[skillLength].module_title
+        },
+        details: allSkills[skillLength]
+      }
+    }) : dispatch({
+      type: 'SET_CURRENT_SKILL',
+      payload: {
+        module: {
+          id: allSkills[currentSkillId - 1].module_id,
+          title: allSkills[currentSkillId - 1].module_title
+        },
+        details: allSkills[currentSkillId - 1]
+      }
+    });
+  };
+
+  var nextSkill = function nextSkill() {
+    currentSkillId == skillLength ? dispatch({
+      type: 'SET_CURRENT_SKILL',
+      payload: {
+        module: {
+          id: allSkills[1].module_id,
+          title: allSkills[1].module_title
+        },
+        details: allSkills[1]
+      }
+    }) : dispatch({
+      type: 'SET_CURRENT_SKILL',
+      payload: {
+        module: {
+          id: allSkills[currentSkillId + 1].module_id,
+          title: allSkills[currentSkillId + 1].module_title
+        },
+        details: allSkills[currentSkillId + 1]
+      }
+    });
+  };
+
+  var stars = function stars(num, key) {
+    var result = [];
+
+    for (var i = 0; i < 3; i++) {
+      if (i < num) {
+        result.push( /*#__PURE__*/_react.default.createElement("svg", {
+          key: "stars" + key + i,
+          height: "16",
+          width: "16"
+        }, /*#__PURE__*/_react.default.createElement("polygon", {
+          points: "8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5",
+          fill: "Yellow",
+          stroke: "DarkKhaki",
+          strokeWidth: ".5"
+        })));
+      } else {
+        result.push( /*#__PURE__*/_react.default.createElement("svg", {
+          key: "stars" + key + i,
+          height: "16",
+          width: "16"
+        }, /*#__PURE__*/_react.default.createElement("polygon", {
+          points: "8,0 10.5,5 16,6 12,10 13,16 8,13 3,16 4,10 0,6 5.5,5",
+          fill: "White",
+          stroke: "DarkKhaki",
+          strokeWidth: ".5"
+        })));
+      }
+    }
+
+    console.log(result.data);
+    return /*#__PURE__*/_react.default.createElement("span", null, result);
+  };
+
+  return /*#__PURE__*/_react.default.createElement("section", {
+    className: "rows flexCenter"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "cols-10 centerText"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn",
+    onClick: function onClick() {
+      return prevSkill();
+    }
+  }, /*#__PURE__*/_react.default.createElement("span", null, "prev.")), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn",
+    onClick: function onClick() {
+      return nextSkill();
+    }
+  }, /*#__PURE__*/_react.default.createElement("span", null, "next"))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "cols-10 prez"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "prezTitle"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, currentModule.title), /*#__PURE__*/_react.default.createElement("h2", null, currentSkill.title)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "prezBody"
+  }, /*#__PURE__*/_react.default.createElement("p", null, currentSkill.description), userIslogged && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Your Level: ", stars(parseInt(userNotes[currentSkill.id]), "me".concat(currentSkill.id))), "  ", /*#__PURE__*/_react.default.createElement("p", null, "Average Level: ", stars(parseInt(promotionNotes[currentSkill.id]), "pro".concat(currentSkill.id)))))));
 };
 
 var _default = SkillDetail;
@@ -37130,6 +37246,34 @@ var App = function App() {
     return state.auth.user.isLogged;
   });
   (0, _react.useEffect)(function () {
+    dispatch({
+      type: 'FETCH_MODULES'
+    });
+
+    _api.default.get('module/modulesWithSkills').then(function (res) {
+      dispatch({
+        type: 'SET_MODULES',
+        payload: res.data
+      });
+    });
+
+    _api.default.get('module/getAllSkills').then(function (res) {
+      dispatch({
+        type: 'SET_ALL_SKILLS',
+        payload: res.data
+      });
+      dispatch({
+        type: 'SET_CURRENT_SKILL',
+        payload: {
+          module: {
+            id: res.data[1].module_id,
+            title: res.data[1].module_title
+          },
+          details: res.data[1]
+        }
+      });
+    });
+
     _localStorage.getStorageLogged && _api.default.get('user/info').then(function (res) {
       return dispatch({
         type: 'SET_USER',
@@ -37229,7 +37373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40303" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44973" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

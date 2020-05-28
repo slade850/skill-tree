@@ -12,7 +12,6 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [formStatus, setFromStatus] = useState('Welcome')
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,13 +30,13 @@ const Login = () => {
         })
     }
     
-    if(logged) return <Redirect to="/" />
+    if(logged && !isLoading) return <Redirect to="/" />
 
     return (
         <div className="">
             { isLoading ? <h2>loading</h2>
         : <form onSubmit={handleSubmit} >
-            <h1>{formStatus}</h1>
+            <h1>Welcome</h1>
             <div className="">
                 <label>Email</label>
                 <input type="email" onChange={(ev)=> setEmail(ev.target.value)} name='email' value={email} required />

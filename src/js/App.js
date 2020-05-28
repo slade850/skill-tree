@@ -18,9 +18,22 @@ import { getStorageLogged, clearLogged } from './utils/local-storage'
 const App = () => {
     
     const dispatch = useDispatch();
-    const userIslogged = useSelector(state => state.auth.user.isLogged)
+    const userIslogged = useSelector(state => state.auth.user.isLogged);
 
     useEffect(() => {
+
+        dispatch({type: 'FETCH_MODULES'})
+        api.get('module/modulesWithSkills')
+        .then(res => {
+            dispatch({type: 'SET_MODULES', payload: res.data})
+        })
+
+        api.get('module/getAllSkills')
+        .then(res =>{
+            dispatch({type: 'SET_ALL_SKILLS', payload: res.data});
+            dispatch({type: 'SET_CURRENT_SKILL', payload: {module: {id: res.data[1].module_id, title: res.data[1].module_title }, details: res.data[1]}})
+        })
+
         getStorageLogged && api.get('user/info')
         .then(res => dispatch({type: 'SET_USER', payload: res.data}))
         .catch(err => {
@@ -46,7 +59,7 @@ const App = () => {
             dispatch({type: "CLEAR_USER"})
         })
 
-}, [userIslogged]);
+    }, [userIslogged]);
     
 
     return (

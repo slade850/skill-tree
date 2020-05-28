@@ -41,10 +41,15 @@ const Query = {
     },
     getAllSkills: () => {
         return new Promise((resolve, reject) => {
-            db.query(`SELECT * FROM skills`, (err, res) => {
-                let result = {};
+            let sqlQuery = `SELECT *, modules.id AS module_id, modules.title AS module_title FROM modules , skills
+            WHERE skills.module_id = modules.id`;
+            db.query(sqlQuery, (err, res) => {
+                let result = new Object;
+                res.forEach(el => {
+                    result[el.id] = el
+                });
                 if (err) reject(err)
-                resolve(result = res.map(el => { return { [el.id]: el } }));
+                resolve(result);
             })
         })  
     },
