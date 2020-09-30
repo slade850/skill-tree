@@ -972,7 +972,19 @@ nav ul li {
 }
 
 nav ul li a {
+  border: 1px solid grey;
+  -webkit-box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+          box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+  border-radius: 5px;
+  line-height: 29px;
+  display: inline-block;
   color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  -webkit-box-shadow: inset 1px 1px 1px gray;
+          box-shadow: inset 1px 1px 1px gray;
 }
 
 .pageTitle {
@@ -996,14 +1008,15 @@ nav ul li a {
 
 .card .cardTitle {
   width: 100%;
-  background-color: #3ecdf1;
+  background-color: #3c64e1;
   text-align: center;
   padding-bottom: 20px;
+  color: white;
 }
 
 .card .cardBody {
   width: 100%;
-  background-color: #baf6fa;
+  background-color: #adbef7;
 }
 
 .card .cardBody ul {
@@ -1011,7 +1024,8 @@ nav ul li a {
 }
 
 .card .cardBody ul li {
-  padding: 5px;
+  padding: 10px;
+  border-bottom: dimgray 1px solid;
 }
 
 .card .cardBody ul li:hover {
@@ -1035,7 +1049,8 @@ nav ul li a {
 
 .prez .prezTitle {
   width: 100%;
-  background-color: #3ecdf1;
+  background-color: #3c64e1;
+  color: white;
   text-align: center;
 }
 
@@ -1050,7 +1065,7 @@ nav ul li a {
 .prez .prezBody {
   width: 100%;
   padding: 20px;
-  background-color: #baf6fa;
+  background-color: #adbef7;
 }
 
 

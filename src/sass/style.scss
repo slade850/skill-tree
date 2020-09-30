@@ -21,7 +21,18 @@ nav{
             margin: 20px;
             color: white;
             a{
+                border: 1px solid grey;
+                box-shadow:2px 2px 2px gray,
+                -1px -1px 2px white;
+                border-radius: 5px;
+                line-height: 29px;
+                display: inline-block;
                 color: white;
+                text-decoration: none;
+            }
+            a:hover{
+                box-shadow: inset 2px 2px 2px gray,
+                -1px -1px 2px white
             }
         }
     }
@@ -47,17 +58,19 @@ nav{
 
     .cardTitle{
         width: 100%;
-        background-color: rgb(62, 205, 241);
+        background-color: $primaryColor;
         text-align: center;
         padding-bottom: 20px;
+        color: white;
     }
     .cardBody{
         width: 100%;
-        background-color: rgb(186, 246, 250);
+        background-color: rgb(173, 190, 247);
         ul{
             list-style: none;
             li{
-                padding: 5px;
+                padding: 10px;
+                border-bottom: rgb(105, 105, 105) 1px solid;
             }
             li:hover{
                 cursor: pointer;
@@ -81,7 +94,8 @@ nav{
     
         .prezTitle{
             width: 100%;
-            background-color: rgb(62, 205, 241);
+            background-color: $primaryColor;
+            color: white;
             text-align: center;
             h1{
                 padding: 20px;
@@ -93,6 +107,6 @@ nav{
         .prezBody{
             width: 100%;
             padding: 20px;
-            background-color: rgb(186, 246, 250);
+            background-color: rgb(173, 190, 247);
         }
     }
