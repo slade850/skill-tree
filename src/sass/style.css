@@ -1,0 +1,1070 @@
+.cols-1 {
+  width: 8.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-1 img {
+  width: 100%;
+}
+
+.cols-2 {
+  width: 16.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-2 img {
+  width: 100%;
+}
+
+.cols-3 {
+  width: 25%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-3 img {
+  width: 100%;
+}
+
+.cols-4 {
+  width: 33.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-4 img {
+  width: 100%;
+}
+
+.cols-5 {
+  width: 41.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-5 img {
+  width: 100%;
+}
+
+.cols-6 {
+  width: 50%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-6 img {
+  width: 100%;
+}
+
+.cols-7 {
+  width: 58.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-7 img {
+  width: 100%;
+}
+
+.cols-8 {
+  width: 66.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-8 img {
+  width: 100%;
+}
+
+.cols-9 {
+  width: 75%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-9 img {
+  width: 100%;
+}
+
+.cols-10 {
+  width: 83.33333%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-10 img {
+  width: 100%;
+}
+
+.cols-11 {
+  width: 91.66667%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-11 img {
+  width: 100%;
+}
+
+.cols-12 {
+  width: 100%;
+  min-height: 1px;
+  padding: 0 10px;
+}
+
+.cols-12 img {
+  width: 100%;
+}
+
+.splitrow-1 {
+  width: 8.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-2 {
+  width: 16.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-3 {
+  width: 25%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-4 {
+  width: 33.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-5 {
+  width: 41.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-6 {
+  width: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-7 {
+  width: 58.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-8 {
+  width: 66.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-9 {
+  width: 75%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-10 {
+  width: 83.33333%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-11 {
+  width: 91.66667%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.splitrow-12 {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.flexCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flexAround {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flexBetween {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flexEvenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flexEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flexStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flexVaCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexVaEnd {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.flexVaStart {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.selfStart {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.selfEnd {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.rows {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 640px) {
+  .csm-1 {
+    width: 8.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-1 img {
+    width: 100%;
+  }
+  .csm-2 {
+    width: 16.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-2 img {
+    width: 100%;
+  }
+  .csm-3 {
+    width: 25%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-3 img {
+    width: 100%;
+  }
+  .csm-4 {
+    width: 33.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-4 img {
+    width: 100%;
+  }
+  .csm-5 {
+    width: 41.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-5 img {
+    width: 100%;
+  }
+  .csm-6 {
+    width: 50%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-6 img {
+    width: 100%;
+  }
+  .csm-7 {
+    width: 58.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-7 img {
+    width: 100%;
+  }
+  .csm-8 {
+    width: 66.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-8 img {
+    width: 100%;
+  }
+  .csm-9 {
+    width: 75%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-9 img {
+    width: 100%;
+  }
+  .csm-10 {
+    width: 83.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-10 img {
+    width: 100%;
+  }
+  .csm-11 {
+    width: 91.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-11 img {
+    width: 100%;
+  }
+  .csm-12 {
+    width: 100%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csm-12 img {
+    width: 100%;
+  }
+  .splitrowM-1 {
+    width: 8.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-2 {
+    width: 16.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-3 {
+    width: 25%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-4 {
+    width: 33.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-5 {
+    width: 41.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-6 {
+    width: 50%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-7 {
+    width: 58.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-8 {
+    width: 66.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-9 {
+    width: 75%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-10 {
+    width: 83.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-11 {
+    width: 91.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowM-12 {
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .flexCenterM {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .flexAroundM {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .flexBetweenM {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .flexEvenlyM {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .flexEndM {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .flexStartM {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .flexVaCenterM {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .flexVaEndM {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .flexVaStartM {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .selfStartM {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .selfEndM {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .csl-1 {
+    width: 8.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-1 img {
+    width: 100%;
+  }
+  .csl-2 {
+    width: 16.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-2 img {
+    width: 100%;
+  }
+  .csl-3 {
+    width: 25%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-3 img {
+    width: 100%;
+  }
+  .csl-4 {
+    width: 33.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-4 img {
+    width: 100%;
+  }
+  .csl-5 {
+    width: 41.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-5 img {
+    width: 100%;
+  }
+  .csl-6 {
+    width: 50%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-6 img {
+    width: 100%;
+  }
+  .csl-7 {
+    width: 58.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-7 img {
+    width: 100%;
+  }
+  .csl-8 {
+    width: 66.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-8 img {
+    width: 100%;
+  }
+  .csl-9 {
+    width: 75%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-9 img {
+    width: 100%;
+  }
+  .csl-10 {
+    width: 83.33333%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-10 img {
+    width: 100%;
+  }
+  .csl-11 {
+    width: 91.66667%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-11 img {
+    width: 100%;
+  }
+  .csl-12 {
+    width: 100%;
+    min-height: 1px;
+    padding: 0 10px;
+  }
+  .csl-12 img {
+    width: 100%;
+  }
+  .splitrowL-1 {
+    width: 8.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-2 {
+    width: 16.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-3 {
+    width: 25%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-4 {
+    width: 33.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-5 {
+    width: 41.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-6 {
+    width: 50%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-7 {
+    width: 58.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-8 {
+    width: 66.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-9 {
+    width: 75%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-10 {
+    width: 83.33333%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-11 {
+    width: 91.66667%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .splitrowL-12 {
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .flexCenterL {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .flexAroundL {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .flexBetweenL {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .flexEvenlyL {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .flexEndL {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .flexStartL {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .flexVaCenterL {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .flexVaEndL {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .flexVaStartL {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .selfStartL {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .selfEndL {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  text-align: center;
+  width: 75px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background-color: #3c64e1;
+  color: white;
+  -webkit-box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+          box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn span:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+}
+
+.btn span:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 2px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+  -webkit-box-shadow: 0 0 2px rgba(202, 228, 225, 0.92), 0 0 10px rgba(202, 228, 225, 0.34), 0 0 4px rgba(30, 132, 242, 0.52), 0 0 7px rgba(30, 132, 242, 0.92), 0 0 11px rgba(30, 132, 242, 0.78), 0 0 16px rgba(30, 132, 242, 0.92);
+          box-shadow: 0 0 2px rgba(202, 228, 225, 0.92), 0 0 10px rgba(202, 228, 225, 0.34), 0 0 4px rgba(30, 132, 242, 0.52), 0 0 7px rgba(30, 132, 242, 0.92), 0 0 11px rgba(30, 132, 242, 0.78), 0 0 16px rgba(30, 132, 242, 0.92);
+  -webkit-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+}
+
+.btn:hover span:before {
+  z-index: 99;
+  border-bottom: solid 2px #3c64e1;
+  border-left: solid 2px #3c64e1;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  -webkit-transition: ease-out 0.4s, width 0.25s, height 0.15s, ease-out 0.3s;
+  transition: ease-out 0.4s, width 0.25s, height 0.15s, ease-out 0.3s;
+}
+
+.btn:hover span:after {
+  z-index: 100;
+  border-top: solid 2px #3c64e1;
+  border-right: solid 2px #3c64e1;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  -webkit-transition: ease-out 0.4s, width 0.25s, height 0.15s, ease-out 0.3s;
+  transition: ease-out 0.4s, width 0.25s, height 0.15s, ease-out 0.3s;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: dimgray;
+}
+
+nav {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+nav ul {
+  list-style: none;
+  margin-right: 10px;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul li {
+  margin: 20px;
+  color: white;
+}
+
+nav ul li a {
+  border: 1px solid grey;
+  -webkit-box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+          box-shadow: 2px 2px 2px gray, -1px -1px 2px white;
+  border-radius: 5px;
+  line-height: 29px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  -webkit-box-shadow: inset 2px 2px 2px gray, -1px -1px 2px white;
+          box-shadow: inset 2px 2px 2px gray, -1px -1px 2px white;
+}
+
+.pageTitle {
+  color: white;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid grey;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card .cardTitle {
+  width: 100%;
+  background-color: #3c64e1;
+  text-align: center;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.card .cardBody {
+  width: 100%;
+  background-color: #adbef7;
+}
+
+.card .cardBody ul {
+  list-style: none;
+}
+
+.card .cardBody ul li {
+  padding: 10px;
+  border-bottom: dimgray 1px solid;
+}
+
+.card .cardBody ul li:hover {
+  cursor: pointer;
+}
+
+.card:hover {
+  width: 40vw;
+}
+
+.prez {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 0;
+}
+
+.prez .prezTitle {
+  width: 100%;
+  background-color: #3c64e1;
+  color: white;
+  text-align: center;
+}
+
+.prez .prezTitle h1 {
+  padding: 20px;
+}
+
+.prez .prezTitle h2 {
+  padding: 20px;
+}
+
+.prez .prezBody {
+  width: 100%;
+  padding: 20px;
+  background-color: #adbef7;
+}
+/*# sourceMappingURL=style.css.map */

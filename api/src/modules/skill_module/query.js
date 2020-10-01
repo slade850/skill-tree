@@ -39,6 +39,20 @@ const Query = {
             })
         })    
     },
+    getAllSkills: () => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT *, modules.id AS module_id, modules.title AS module_title FROM modules , skills
+            WHERE skills.module_id = modules.id`;
+            db.query(sqlQuery, (err, res) => {
+                let result = new Object;
+                res.forEach(el => {
+                    result[el.id] = el
+                });
+                if (err) reject(err)
+                resolve(result);
+            })
+        })  
+    },
 }
 
 module.exports = Query;

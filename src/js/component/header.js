@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 
-const Header = (props) => {
-    console.log('header props: ', props)
+const Header = () => {
+
+    const dispatch = useDispatch()
+    const userIslogged = useSelector(state => state.auth.user.isLogged)
+    const user = useSelector(state => state.auth.user.detail)
+
+
     return (
         <header>
             <nav>
@@ -12,11 +18,11 @@ const Header = (props) => {
                         <Link to="/">Home</Link>
                     </li>
                     {
-                        props.user ?
+                        userIslogged ?
                             (
                                 <li>
-                                    <span>{props.user.firstName}</span>
-                                    <button>Logout</button>
+                                    <span>{user.firstName}</span>
+                                    <button onClick={() => dispatch({type: "CLEAR_USER"})}>Logout</button>
                                 </li>
                             ) :
                             (
@@ -25,9 +31,10 @@ const Header = (props) => {
                                 </li>
                             )
                     }
+                    { !userIslogged &&
                     <li>
                         <Link to="/register">Register</Link>
-                    </li>
+                    </li>}
                 </ul>
             </nav>
         </header>

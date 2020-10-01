@@ -1,53 +1,42 @@
-import React, {useState} from 'react';
-import { setStorageUser } from '../utils/local-storage'
-import api from '../utils/api';
+import React, {useState, useEffect} from 'react';
+import { doLogin } from '../store/auth'
+import { useSelector, useDispatch } from 'react-redux'
+import { Redirect } from 'react-router-dom';
 
-const Login = (props) => {
+const Login = () => {
+
+    const dispatch = useDispatch();
+    const message = useSelector(state => state.auth.authMessage.message);
+    const logged = useSelector(state => state.auth.user.isLogged);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [formSubmitted, setFromSubmitted] = useState(false);
-    const [message, setMessage] = useState(null);
-    const [formStatus, setFromStatus] = useState('Welcome')
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setMessage(null);
         setIsLoading(true);
-        setFromStatus('please wait');
+        dispatch({type: "CLEAR_AUTH_MESSAGE"})
         const body = {
             email,
             password
         }
-        console.log(body)
-        api.post('user/authenticate', body)
-        .then(response => {
-            setStorageUser(response.data.user)
-            props.setUser(response.data.user)
-            setMessage(response.data.message)
-            setFromStatus('Welcome')
+        dispatch(doLogin(body))
+        .then(res => {
+            setIsLoading(false)
         })
         .catch(err => {
-            console.log(err.response)
-            setMessage(err.response.data.message);
-            setFromStatus('Try again');
+            setIsLoading(false)
         })
-        .finally(() => setIsLoading(false) )
-
-/*         setTimeout(() =>{
-            setFromStatus('form receive')
-            let response = Math.round(Math.random());
-            response == 1 ? setMessage('User successfully connected') : setMessage('username or password missmatch')
-            setTimeout(() => {setFromStatus('Welcome')}, 1200);
-            setIsLoading(false);
-        }, 2000) */
     }
+    
+    if(logged && !isLoading) return <Redirect to="/" />
 
     return (
         <div className="">
             { isLoading ? <h2>loading</h2>
         : <form onSubmit={handleSubmit} >
-            <h1>{formStatus}</h1>
+            <h1>Welcome</h1>
             <div className="">
                 <label>Email</label>
                 <input type="email" onChange={(ev)=> setEmail(ev.target.value)} name='email' value={email} required />

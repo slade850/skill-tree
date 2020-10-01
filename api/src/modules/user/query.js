@@ -142,6 +142,31 @@ const Query = {
                 resolve(res);
             })
         })    
+    },
+    getAllSkill: () => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT skills.id FROM skills`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res)
+        })
+    })
+    },
+    getUsersGroupAverageLevel: (promo_id, skill_id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT user_skills_levels.level_id
+            FROM users, users_promotions, user_skills_levels
+            WHERE users.id = users_promotions.user_id
+            AND users_promotions.promotion_id = ${promo_id}
+            AND user_skills_levels.skill_id = ${skill_id}
+            AND users.id = user_skills_levels.user_id`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve({skill: skill_id, notes: Math.round(res.reduce((a, b) => a + b.level_id , 0)/res.length)})
+        })
+    })
     }
 }
 

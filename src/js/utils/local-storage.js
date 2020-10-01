@@ -1,17 +1,11 @@
-export const setStorageUser = (user) => {
-    return window.localStorage.setItem('user', JSON.stringify(user))
+export const setStorageLogged = (logged) => {
+    return window.localStorage.setItem('logged', logged)
 }
 
-export const getStorageUser = () => {
-    return JSON.parse(window.localStorage.getItem('user'))
+export const getStorageLogged = () => {
+    return window.localStorage.getItem('logged')
 }
 
-export const clearUser = () => {
-    window.localStorage.removeItem('user');
+export const clearLogged = () => {
+    window.localStorage.removeItem('logged');
 }
-
-// si je suis dans un autre fichier
-
-// import {setUser} from 'local-storage';
-// import {getUser} from 'local-storage';
-// import {clearUser} from 'local-storage';
