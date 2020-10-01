@@ -33453,7 +33453,19 @@ module.exports.default = axios;
 
 },{"./utils":"../node_modules/axios/lib/utils.js","./helpers/bind":"../node_modules/axios/lib/helpers/bind.js","./core/Axios":"../node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"../node_modules/axios/lib/core/mergeConfig.js","./defaults":"../node_modules/axios/lib/defaults.js","./cancel/Cancel":"../node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"../node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"../node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"../node_modules/axios/lib/helpers/spread.js"}],"../node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"../node_modules/axios/lib/axios.js"}],"js/utils/api.js":[function(require,module,exports) {
+},{"./lib/axios":"../node_modules/axios/lib/axios.js"}],"../urlConf.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var urlConfig = {
+  url: 'http://julien-bardin.tech:3000/api/'
+};
+var _default = urlConfig;
+exports.default = _default;
+},{}],"js/utils/api.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33463,17 +33475,19 @@ exports.default = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
+var _urlConf = _interopRequireDefault(require("../../../urlConf"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _axios.default.defaults.withCredentials = true;
 
 var instance = _axios.default.create({
-  baseURL: 'http://localhost:3000/api/'
+  baseURL: _urlConf.default.url
 });
 
 var _default = instance;
 exports.default = _default;
-},{"axios":"../node_modules/axios/index.js"}],"js/utils/local-storage.js":[function(require,module,exports) {
+},{"axios":"../node_modules/axios/index.js","../../../urlConf":"../urlConf.js"}],"js/utils/local-storage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37373,7 +37387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39003" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33935" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

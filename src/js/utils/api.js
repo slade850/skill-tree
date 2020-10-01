@@ -1,9 +1,9 @@
 import axios from 'axios';
+import urlConfig from '../../../urlConf';
 
 axios.defaults.withCredentials = true;
 const instance = axios.create({
-    baseURL: 'http://localhost:3000/api/'
-
+    baseURL: urlConfig.url
 })
 
 
