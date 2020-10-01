@@ -3,7 +3,7 @@ import urlConfig from '../../../urlConf';
 
 axios.defaults.withCredentials = true;
 const instance = axios.create({
-    baseURL: urlConfig.url
+    baseURL: `${urlConfig.url}`
 })
 
 
