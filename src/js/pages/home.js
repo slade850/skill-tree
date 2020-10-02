@@ -42,7 +42,7 @@ const Home = () => {
                     <h2 className="cardTitle">{module.module.title}</h2>
                     <div className="cardBody">
                     <ul>
-                {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); history.push("/skillDetails") }}> 
+                {module.skills.map(skill => { return (<li key={'skill' + skill.id} onClick={() => { dispatch({type: 'SET_CURRENT_SKILL', payload: {module: module.module, details: skill}}); history.push("skillDetails") }}> 
                 <span>{skill.title}</span> { userIslogged && <div><p>Your Level:
                 {stars(parseInt(userNotes[skill.id]), `me${skill.id}`)}
                 </p>   

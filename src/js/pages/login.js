@@ -30,7 +30,7 @@ const Login = () => {
         })
     }
     
-    if(logged && !isLoading) return <Redirect to="/" />
+    if(logged && !isLoading) return <Redirect to="/skill" />
 
     return (
         <div className="">

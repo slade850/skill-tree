@@ -15,7 +15,7 @@ const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/skill">Home</Link>
                     </li>
                     {
                         userIslogged ?
@@ -27,13 +27,13 @@ const Header = () => {
                             ) :
                             (
                                 <li>
-                                    <Link to="/login">Login</Link>
+                                    <Link to="login">Login</Link>
                                 </li>
                             )
                     }
                     { !userIslogged &&
                     <li>
-                        <Link to="/register">Register</Link>
+                        <Link to="register">Register</Link>
                     </li>}
                 </ul>
             </nav>
